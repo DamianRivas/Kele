@@ -30,7 +30,14 @@ describe Kele do
         "key1": "value1",
         "key2": {
           "key3": "value2"
-        }
+        },
+        "key4": [
+          {
+            "key5": "value3"
+          },
+          1,
+          "string"
+        ]
       }
       
       expect( kele_client.send(:deep_symbolize_keys, hash) ).to eq(
@@ -38,7 +45,14 @@ describe Kele do
           key1: "value1",
           key2: {
             key3: "value2"
-          }
+          },
+          key4: [
+            {
+              key5: "value3"
+            },
+            1,
+            "string"
+          ]
         }
       )
     end
