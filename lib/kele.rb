@@ -20,7 +20,14 @@ class Kele
       }
     }
     
-    @auth_token = self.class.post(url, options).parsed_response["auth_token"]
+    response = self.class.post(url, options)
+    
+    if response && response["auth_token"]
+      @auth_token = response["auth_token"]
+      puts "#{email} has sucessfully logged in"
+    else
+      puts "Login invalid"
+    end
   end
   
   def set_base_url(url)
