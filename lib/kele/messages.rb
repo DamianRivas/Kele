@@ -19,16 +19,9 @@ module Messages
     url = @base_url + "/messages"
 
     options = {
-<<<<<<< HEAD
       query: {
         "sender": sender,
         "recipient_id": recipient_id,
-=======
-      values: {
-        "sender": sender,
-        "recipient_id": recipient_id,
-        "token": token,
->>>>>>> d50f9db5e4e95b393112435856a4ef044cca6c75
         "subject": subject,
         "stripped-text": body
       },
